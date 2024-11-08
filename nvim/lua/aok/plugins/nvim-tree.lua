@@ -9,7 +9,7 @@ return {
     local nvimtree = require("nvim-tree")
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
-    
+
     nvimtree.setup({
       view = {
         width = 35,
@@ -17,7 +17,7 @@ return {
       renderer = {
         indent_markers = {
           enable = true,
-        }
+        },
       },
       sort = {
         sorter = "case_sensitive",
@@ -26,15 +26,15 @@ return {
         open_file = {
           window_picker = {
             enable = false,
-          }
-        }
+          },
+        },
       },
       filters = {
-        dotfiles = true,
-      },      
+        dotfiles = false,
+      },
       git = {
         ignore = false,
-      }
+      },
     })
 
     -- keymaps
@@ -44,6 +44,5 @@ return {
     keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>", { desc = "Toggle file explorer at the current file" })
     keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
     keymap.set("n", "<leader>er", ":NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
-    
   end,
 }
